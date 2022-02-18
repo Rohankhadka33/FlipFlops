@@ -1,0 +1,22 @@
+{% extends 'indexbase.html' %}
+{% load static %}
+
+{% block content %}
+        <link rel="stylesheet" href="./../static/css/login.css">
+
+<div class="main">
+    <p class="sign" align="center">Sign in</p>
+    <form class="form1" method="POST" action="">
+        {% csrf_token %}
+        <input class="un " type="text" align="center" placeholder="Username" name="username" >
+        <input class="un " type="text" align="center" placeholder="Full Name" name="fullname" >
+        <input class="un " type="text" align="center" placeholder="Email" name="email" >
+        <input class="pass" type="password" align="center" name="password" placeholder="Password">
+        <a class="submit" align="center"> <input type="submit" value="Sign Up" align="center"  /></a>
+
+        <p class="forgot" align="center"><a href="#">Forgot Password?</a></p>
+
+    </form>
+</div>
+
+{% endblock %}
