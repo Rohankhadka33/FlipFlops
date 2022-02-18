@@ -1,0 +1,23 @@
+{% extends 'indexbase.html' %}
+{% load static %}
+
+{% block content %}
+        <link rel="stylesheet" href="./.././../static/css/login.css">
+
+<div class="main">
+    <p class="sign" align="center">Billing</p>
+    <form class="form1" method="POST" action="/Order_create">
+        {% csrf_token %}
+        <input class="un " type="text" align="center" placeholder="Full Name" name="fullname" >
+        <input class="un " type="text" align="center" placeholder="Delivery Address" name="deliveryaddress" >
+        <input class="un " type="email" align="center" placeholder="Email" name="email" >
+        <input class="un " type="number" align="center" placeholder="phone" name="phone" >
+        <input class="pass" type="number" align="center" name="mobile" placeholder="mobile">
+        <a class="submit" align="center"> <input type="submit" value="Place Order" align="center"  /></a>
+
+        <p class="forgot" align="center"><a href="/shoes">Cancel Order</a></p>
+
+    </form>
+</div>
+
+{% endblock %}

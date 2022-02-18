@@ -1,0 +1,53 @@
+{% extends 'auth/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- New Arrivals section start -->
+    <div class="collection_text">Shoes</div>
+    <div class="collection_section layout_padding">
+        <div class="container">
+            <h1 class="new_text"><strong>New Arrivals Products</strong></h1>
+        </div>
+    </div>
+    <div class="layout_padding gallery_section">
+        <div class="container">
+            <div class="row">
+
+                {% for p in products %}
+                    <div class="col-sm-4">
+                        <div class="best_shoes">
+                            <p class="best_text">{{ p.productname }} </p>
+                            <div class="shoes_icon"><img width="100px" height="100px"
+                                                         src="{% static 'images/' %}{{ p.image }}"
+                                                         alt="product"></div>
+                            <div class="star_text">
+                                <div class="left_part">
+                                    <ul>
+                                        <li><a href="#"><img src="../../static/images/star-icon.png" alt=""></a></li>
+                                        <li><a href="#"><img src="../../static/images/star-icon.png" alt=""></a></li>
+                                        <li><a href="#"><img src="../../static/images/star-icon.png" alt=""></a></li>
+                                        <li><a href="#"><img src="../../static/images/star-icon.png" alt=""></a></li>
+                                        <li><a href="#"><img src="../../static/images/star-icon.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                                <div class="right_part">
+                                    <div class="shoes_price">{{ p.price }}</div>
+                                </div>
+                            </div>
+                            <a href="/billing">
+                                <button class="buy-1">Buy Now</button>
+                            </a>
+
+                        </div>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+    <!-- New Arrivals section end -->
+
+
+{% endblock %}
